@@ -12,11 +12,13 @@ const TodoList = () => {
   const activeTodos = todos.filter(todo => !todo.completed);
   const completedTodos = todos.filter(todo => todo.completed);
 
-  const handleAddClick = () => {
+  const handleAddClick = (e) => {
+    e.preventDefault();
     if (newTodo.trim()) {
-      dispatch(addTodo(newTodo));
-      setNewTodo('');
-    }
+      dispatch(addTodo(newTodo.trim()));
+      }
+        setNewTodo('')
+    
   };
 
   const handleEditClick = (id, text) => {
@@ -40,7 +42,8 @@ const TodoList = () => {
   };
 
   return (
-    <div>
+    <div >
+      <form onSubmit={handleAddClick}>
       <input
         type="text"
         value={newTodo}
@@ -48,6 +51,8 @@ const TodoList = () => {
         placeholder="Add a new to-do"
         />
       <button onClick={handleAddClick}>Add</button>
+      </form>
+     
       <ul>
         {}
         {activeTodos.map(todo => (

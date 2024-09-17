@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as  Router, Route, Routes } from 'react-router-dom';
+import { Outlet, Link } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from './ToDoList/Store';
 import Home from './ToDoList/Header/Home';
@@ -17,11 +18,12 @@ function App() {
             <nav>
             <Logo />
             <div className='header-items'>
-              <a href="/">Home</a>
-              <a href="/about">About Us</a>
-              <a href="/contact">Contact Us</a>
+              <Link to="/">Home</Link>
+              <Link to="/about">About Us</Link>
+              <Link to="/contact">Contact Us</Link>
               </div>
             </nav>
+            <Outlet />
           </header>
           <main>
             <Routes>
