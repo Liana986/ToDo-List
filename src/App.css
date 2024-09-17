@@ -1,0 +1,268 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #b7cfe2;
+    color: #333;
+  }
+  
+  header {
+    background-color: #282c34;
+    text-align: center;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 20px;
+    background-color: #282c34;
+    color: rgb(215, 220, 246);
+  }
+
+  header .container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  header h1 {
+    margin: 0;  
+  }
+
+  header img.logo {
+    height: 10px; 
+    margin-left: 10px; 
+    font-size: 32px;
+    font-weight: bold;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: right;
+  }
+  
+  input[type="text"] {
+    padding: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    border: 1px solid #1d2648;
+    border-radius: 4px;
+    width: calc(100% - 75px); 
+  }
+  
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #30304e;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 10px;
+  }
+  
+  li {
+    background-color: #f1f1f4;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  li.completed {
+    text-decoration: line-through;
+    color: #202021;
+  }
+  
+  input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  button.delete {
+    background-color: #b8303d;
+  }
+  
+  button.delete:hover {
+    background-color: hsl(354, 71%, 41%);
+  }
+  
+  nav {
+    display: flex;
+    margin: 0;
+    gap: 200px;
+    align-items: center;
+    padding: 10px;
+    font-size: 20px;
+  }
+  
+  nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #4fc1e1;
+    font-weight: bold;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  
+  main {
+    padding: 20px;
+  }
+  
+  li div {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+  }
+  
+  li div input[type="text"] {
+    margin-right: 0px;
+    width: auto;
+  }
+  
+  li div button {
+    margin-left: 5px;
+  }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    header {
+      font-size: 1.75rem;
+    }
+  
+    .container {
+      padding: 15px;
+    }
+  
+    input[type="text"] {
+      width: calc(100% - 55px); 
+    }
+  
+    button {
+      padding: 9px 18px;
+    }
+  
+    li {
+      flex-direction: row;
+    }
+  
+    li div {
+      margin-top: 0;
+    }
+  }
+  
+  
+  @media (min-width: 1024px) {
+    .container {
+      padding: 20px;
+    }
+  
+    input[type="text"] {
+      width: calc(100% - 75px); 
+    }
+  
+    button {
+      padding: 10px 20px;
+    }
+  }
+
+.edit-button,
+.delete-button {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  margin-left: 10px;
+}
+
+li:hover .edit-button,
+li:hover .delete-button {
+  opacity: 1; 
+}
+
+li {
+  position: relative; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+
+}
+
+.logo-container {
+  width: 150px;
+  height: 150px; 
+  background-size: 200%;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+}
+
+header img.logo {
+  height: 40px; 
+  border-radius: 50%;
+  margin-left: 20px;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+.changes-disabled {
+  display: none;
+}
+
+p {
+  text-align: center;
+  font-family: 'Times New Roman';
+  font-weight: bold;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.todo-text {
+  max-width: 100%;
+  padding: 10px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  border-radius: 4px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-items {
+  display: flex;
+  gap: 15px;
+  margin-right: auto;
+}
+
+.header-items a {
+  text-decoration: none;
+  padding: 10px;
+  color: #b7cfe2;
+}
