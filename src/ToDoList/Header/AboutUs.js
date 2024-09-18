@@ -5,7 +5,7 @@ const About = () => (
     <header>
       <h1>About Us</h1>
     </header>
-    <p>This is the "about us" page.</p>
+    <p className='description-text'>This is the "About us" page.</p>
   </div>
 );
 

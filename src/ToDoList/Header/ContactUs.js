@@ -5,7 +5,7 @@ const Contact = () => (
     <header>
       <h1>Contact Us</h1>
     </header>
-    <p>This is the "contact us" page.</p>
+    <p className='description-text'>This is the "Contact us" page.</p>
   </div>
 );
 

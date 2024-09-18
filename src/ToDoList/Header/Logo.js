@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './todo-list-logo.jpg';
+import logo from './todo-list-logo.png';
 
 const Logo = () => {
   return (

@@ -48,7 +48,7 @@ const TodoList = () => {
         type="text"
         value={newTodo}
         onChange={(e) => setNewTodo(e.target.value)}
-        placeholder="Add a new to-do"
+        placeholder="Add a new to-do..."
         />
       <button onClick={handleAddClick}>Add</button>
       </form>
@@ -62,13 +62,13 @@ const TodoList = () => {
               checked={todo.completed}
               onChange={() => dispatch(toggleTodo(todo.id))}/>
             {editId === todo.id ? (
-              <div>
-                <input
+              <div className='edit-buttons'>
+                <input className='edit-input'
                   type="text"
                   value={editText}
                   onChange={(e) => setEditText(e.target.value)}/>
-                <button onClick={handleSaveEdit}>Save</button>
-                <button onClick={handleCancelEdit}>Cancel</button>
+                <button className='save-button' onClick={handleSaveEdit}>✔️</button>
+                <button className='cancel-button' onClick={handleCancelEdit}>❌ </button>
               </div>
             ) : (
               <span className='todo-text'>{todo.text}</span>
@@ -76,8 +76,8 @@ const TodoList = () => {
             <div className='changes'>
             <button className="edit-button"
               onClick={() => handleEditClick(todo.id, todo.text)}
-              disabled={todo.completed} >Edit</button>
-            <button className="delete-button delete" onClick={() => dispatch(deleteTodo(todo.id))}>Delete</button>
+              disabled={todo.completed} >✏️</button>
+            <button className="delete-button delete" onClick={() => dispatch(deleteTodo(todo.id))}>🗑️</button>
             </div>
           </li>
         ))}
@@ -95,16 +95,16 @@ const TodoList = () => {
                   type="text"
                   value={editText}
                   onChange={(e) => setEditText(e.target.value)}/>
-                <button onClick={handleSaveEdit}>Save</button>
-                <button onClick={handleCancelEdit}>Cancel</button>
+                <button onClick={handleSaveEdit}>✔️</button>
+                <button onClick={handleCancelEdit}>❌ </button>
               </div>
             ) : (
               <span className='todo-text'>{todo.text}</span>
             )}
             <div className='changes-disabled'>
             <button onClick={() => handleEditClick(todo.id, todo.text)}
-              disabled={todo.completed}>Edit</button>
-            <button className="delete" onClick={() => dispatch(deleteTodo(todo.id))}>Delete</button>
+              disabled={todo.completed}>✏️</button>
+            <button className="delete" onClick={() => dispatch(deleteTodo(todo.id))}>🗑️</button>
             </div>
           </li>
         ))}
