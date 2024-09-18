@@ -283,6 +283,7 @@ button:disabled {
 .completed {
   background: #D3F0B1; 
   color: #495454;
+  text-decoration: line-through;
 }
 
 /* Descriptions */
