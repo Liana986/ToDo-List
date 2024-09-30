@@ -12,7 +12,6 @@ const loadState = () => {
   }
 };
 
-
 const saveState = (state) => {
   try {
     const serializedState = JSON.stringify(state);
@@ -32,5 +31,3 @@ export const store = configureStore({
 store.subscribe(() => {
   saveState(store.getState());
 });
-
-

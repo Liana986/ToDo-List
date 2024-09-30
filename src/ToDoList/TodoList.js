@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addTodo, toggleTodo, deleteTodo, editTodo } from './TodoSlice';
 
+
 const TodoList = () => {
   const [newTodo, setNewTodo] = useState('');
   const [editId, setEditId] = useState(null);
@@ -18,7 +19,6 @@ const TodoList = () => {
       dispatch(addTodo(newTodo.trim()));
       }
         setNewTodo('')
-    
   };
 
   const handleEditClick = (id, text) => {
@@ -44,28 +44,19 @@ const TodoList = () => {
   return (
     <div >
       <form onSubmit={handleAddClick}>
-      <input
-        type="text"
-        value={newTodo}
-        onChange={(e) => setNewTodo(e.target.value)}
-        placeholder="Add a new to-do..."
-        />
-      <button onClick={handleAddClick}>Add</button>
+       <input type="text" value={newTodo} onChange={(e) => setNewTodo(e.target.value)}
+        placeholder="Add a new to-do..." />
+       <button onClick={handleAddClick}>Add</button>
       </form>
      
       <ul>
         {}
         {activeTodos.map(todo => (
           <li key={todo.id} className={todo.completed ? 'completed' : ''}>
-            <input
-              type="checkbox"
-              checked={todo.completed}
-              onChange={() => dispatch(toggleTodo(todo.id))}/>
+            <input type="checkbox" checked={todo.completed} onChange={() => dispatch(toggleTodo(todo.id))}/>
             {editId === todo.id ? (
               <div className='edit-buttons'>
-                <input className='edit-input'
-                  type="text"
-                  value={editText}
+                <input className='edit-input' type="text" value={editText}
                   onChange={(e) => setEditText(e.target.value)}/>
                 <button className='save-button' onClick={handleSaveEdit}>✔️</button>
                 <button className='cancel-button' onClick={handleCancelEdit}>❌ </button>
@@ -74,8 +65,7 @@ const TodoList = () => {
               <span className='todo-text'>{todo.text}</span>
             )}
             <div className='changes'>
-            <button className="edit-button"
-              onClick={() => handleEditClick(todo.id, todo.text)}
+            <button className="edit-button" onClick={() => handleEditClick(todo.id, todo.text)}
               disabled={todo.completed} >✏️</button>
             <button className="delete-button delete" onClick={() => dispatch(deleteTodo(todo.id))}>🗑️</button>
             </div>
@@ -84,17 +74,10 @@ const TodoList = () => {
         {}
         {completedTodos.map(todo => (
           <li key={todo.id} className="completed">
-            <input
-              type="checkbox"
-              checked={todo.completed}
-              onChange={() => dispatch(toggleTodo(todo.id))}
-            />
+            <input type="checkbox" checked={todo.completed} onChange={() => dispatch(toggleTodo(todo.id))} />
             {editId === todo.id ? (
               <div>
-                <input 
-                  type="text"
-                  value={editText}
-                  onChange={(e) => setEditText(e.target.value)}/>
+                <input type="text" value={editText} onChange={(e) => setEditText(e.target.value)}/>
                 <button onClick={handleSaveEdit}>✔️</button>
                 <button onClick={handleCancelEdit}>❌ </button>
               </div>
@@ -102,8 +85,7 @@ const TodoList = () => {
               <span className='todo-text'>{todo.text}</span>
             )}
             <div className='changes-disabled'>
-            <button onClick={() => handleEditClick(todo.id, todo.text)}
-              disabled={todo.completed}>✏️</button>
+            <button onClick={() => handleEditClick(todo.id, todo.text)} disabled={todo.completed}>✏️</button>
             <button className="delete" onClick={() => dispatch(deleteTodo(todo.id))}>🗑️</button>
             </div>
           </li>
