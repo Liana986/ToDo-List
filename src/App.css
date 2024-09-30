@@ -22,7 +22,7 @@ body {
 /* Header */
 
 header {
-  background: #f9e2a6; 
+  background: #f6e0b0; 
   color: #333;
   padding: 15px 20px;
   display: flex;
@@ -97,7 +97,7 @@ form input[type="text"] {
 
 form button {
   padding: 12px 20px;
-  background: #b6d591;
+  background: #b8ca97;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -200,21 +200,23 @@ input:focus {
 }
 
 .edit-button {
-  background: #fce0a3; 
+  background: #f0d69c; 
   color: #333;
 }
 
 .edit-button:hover {
   background: #f1c572; 
+  box-shadow: 0 4px 8px rgba(133, 108, 75, 0.3);
 }
 
 .delete-button {
-  background: #f9a6a6; 
+  background: #f6a8a8; 
   color: #fff;
 }
 
 .delete-button:hover {
   background: #f78a8a; 
+  box-shadow: 0 4px 8px rgba(140, 82, 82, 0.3);
 }
 
 .edit-input {
@@ -247,24 +249,24 @@ input:focus {
 /* Save and Cancel Buttons */
 
 .save-button {
-  background: #5bea84; 
+  background: #8cd9a2; 
   color: #fff;
   margin: 5px;
 }
 
 .save-button:hover {
-  background: #39c257; 
+  background: #6fb57e; 
   box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
 }
 
 .cancel-button {
-  background: #fa919c; 
+  background: #e4a9af; 
   color: #fff;
   margin: 5px;
 }
 
 .cancel-button:hover {
-  background: #db747f; 
+  background: #e88992; 
   box-shadow: 0 4px 8px rgba(220, 56, 72, 0.3);
 }
 
@@ -282,7 +284,7 @@ button:disabled {
 }
 
 .completed {
-  background: #c3e49c;
+  background: #d2e2b6;
   color: #495454;
   text-decoration: line-through;
 }
