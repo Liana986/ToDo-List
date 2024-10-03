@@ -50,7 +50,6 @@ const TodoList = () => {
       </form>
      
       <ul>
-        {}
         {activeTodos.map(todo => (
           <li key={todo.id} className={todo.completed ? 'completed' : ''}>
             <input type="checkbox" checked={todo.completed} onChange={() => dispatch(toggleTodo(todo.id))}/>
@@ -71,7 +70,6 @@ const TodoList = () => {
             </div>
           </li>
         ))}
-        {}
         {completedTodos.map(todo => (
           <li key={todo.id} className="completed">
             <input type="checkbox" checked={todo.completed} onChange={() => dispatch(toggleTodo(todo.id))} />
