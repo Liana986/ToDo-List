@@ -112,6 +112,18 @@ form button:hover {
 
 /* Todos */
 
+.todo-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.timestamps {
+  display: block;
+  font-size: 0.75rem;
+  color: grey;
+  margin-top: 2px;
+}
+
 ul {
   list-style: none;
   padding: 0;

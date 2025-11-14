@@ -61,7 +61,13 @@ const TodoList = () => {
                 <button className='cancel-button' onClick={handleCancelEdit}>❌ </button>
               </div>
             ) : (
+              <div className='todo-content'>
               <span className='todo-text'>{todo.text}</span>
+              <div className='timestamps'>
+                <small>Added: {todo.createdAt ? new Date(todo.createdAt).toLocaleString() : 'Invalid Date'} </small>
+                {todo.completed && todo.completedAt && ( <small>Complated: {new Date(todo.completedAt).toLocaleString()}</small>)}
+              </div>
+            </div>
             )}
             <div className='changes'>
             <button className="edit-button" onClick={() => handleEditClick(todo.id, todo.text)}
